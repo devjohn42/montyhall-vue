@@ -2,7 +2,7 @@
   <div class="door-area">
     <div class="door-frame" :class="{ selected: isSelected && !isOpen }">
       <!--caso verdadeiro o selected é aplicado como classe-->
-      <Gift v-if="open && hasGift" />
+      <Gift v-if="isOpen && hasGift" />
     </div>
     <div
       class="door"
@@ -25,7 +25,7 @@ export default {
   name: "Door",
   components: { Gift },
   props: {
-    number: { type: Number },
+    number: {},
     hasGift: { type: Boolean },
   },
   data: () => {
